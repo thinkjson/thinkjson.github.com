@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'AlternateGothicFSNo3';
+  src: url('/fonts/AlternateGothicNo3-webfont.eot');
+  src: local('☺'), url('/fonts/AlternateGothicNo3-webfont.woff') format('woff'), url('/fonts/AlternateGothicNo3-webfont.ttf') format('truetype'), url('/fonts/AlternateGothicNo3-webfont.svg#webfontUJOPMwss') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{font-family:'Liberation Sans', 'Lucida Sans', 'Helvetica Neue', sans-serif;font-size:12px;color:#222;}
+h1, h2, h3, h4, h1 a, h2 a, h3 a, h4 a, #nav a {color:#9A0300;margin:0;font-weight:normal;font-family:'AlternateGothicFSNo3', sans-serif;}
+h1, h1 a{font-size:28px;padding:0 1%;}
+h2, h2 a{font-size:22px;}
+h3, h3 a, #nav a{font-size:18px;}
+h4{font-weight:bold;}
+body{background:#570002;margin:20px 0;}
+#logo a{background:url(/images/logo.png) 0% 0% no-repeat;padding-top:60px;padding-left:22px;}
+#logo h1{display:block;}
+#search {text-align:right;margin-right:30px;}
+#search input{border:1px solid #ddd;width:155px;}
+#container{max-width:800px;margin:0 auto;background-color:#fff;box-shadow: 0 0 20px #000;}
+#content{padding:0 30px;}
+#sidebar{background-color:#ccc;padding:10px 30px;}
+#nav{text-align:right;padding:30px;}
+#nav a{margin-left:10px;}
+input, textarea{border:1px solid #ddd;}
+textarea{min-width:500px;height:200px;}
+.edit input, .edit textarea{width:80%;}
+.description, .description a{font-size:8pt;margin-bottom:15px;}
+a{color:#9A0300;text-decoration:none;}
+form th{text-align:left;}
+.required{display:none;}
+.portrait{border:1px solid #999;float:left;margin: 0 10px 10px 0;}
+.previous{clear:left;}
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .mi { color: #01595D } /* Literal.Number.Integer */
+.highlight .sr { color: #007908 } /* Literal.String.Regex */
+.highlight .s1 { color: #7D0044 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+pre code,pre code *{font-family:'Monaco', 'Liberation Mono', monospace;}
+pre{background-color:#eee;padding:10px;}
+@media screen and (max-width: 760px){
+  #content,#sidebar{padding:10px;}
+  #logo a{padding-left:5px;}
+  #logo{margin-top:60px;}
+  #nav,#search{padding-right:10px;}
+  body{margin:0}
+}
+.dsq-options{display:none;}
