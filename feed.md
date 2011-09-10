@@ -11,12 +11,12 @@ permalink: /feed.rss
     <description>Web application developer specializing in scalable web services and elegant user experiences</description> 
     <managingEditor>rss@thinkjson.com (RSS Feed)</managingEditor> 
     <webMaster>rss@thinkjson.com (RSS Feed)</webMaster>
-    <atom:link href="http://www.thinkjson.com/feed/" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.thinkjson.com/feed.rss" rel="self" type="application/rss+xml" />
     <language>en-us</language>
     <pubDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %Z" }}</pubDate>
     <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %Z" }}</lastBuildDate>
 
-    {% for post in site.posts[0..10] %}
+    {% for post in site.posts limit:10 %}
     {% if post.date != "1900-01-01" %}
     <item>
       <title>{{ post.title }}</title>
