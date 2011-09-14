@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Saiku - Next Generation Open Source Analytics</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20110919" />
+<meta name="author" content="Mark Cahill" />
+<meta name="company" content="Analytical Labs" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../ui/saiku/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../ui/saiku/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../ui/saiku/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../ui/saiku/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="../ui/saiku/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>September 19, 2011 at DeVry University</h1>
+<h2>Saiku - Next Generation Open Source Analytics</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Saiku</h1>
+<h2>Next Generation Open Source Analytics</h2>
+<h3>Mark Cahill</h3>
+<h4>Core developer for Saiku<br />
+    Development Operations Coordinator for Stetson University<br />
+    Contractor for Dynamo BI
+</h4>
+</div>
+
+<div class="slide">
+    <h1>First, an introduction</h1>
+    <p>Saiku is a modular open-source analysis suite offering lightweight OLAP which remains easily embeddable, extendable and configurable.</p>
+    <p>Our RESTful server connects to existing OLAP systems, which then powers user-friendly, intuitive analytics via our lightweight JQuery based frontend.</p> 
+    <table style="width:100%">
+    <tr>
+        <td><img src="../ui/saiku/screenshot_1_thumb.png" /></td>
+        <td><img src="../ui/saiku/screenshot_2_thumb.png" /></td>
+        <td><img src="../ui/saiku/screenshot_5_thumb.png" /></td>
+        <td><img src="../ui/saiku/screenshot_6_thumb.png" /></td>
+    </tr>
+    </table>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+	<h1>What's new in 2.2</h1>
+	<ul>
+	<li>completely rewritten frontend based on backbone.js</li>
+	<li>client-side caching of cubes and dimensions</li>
+	<li>various interaction improvements</li>
+	<li>super easy translation process</li>
+	<li>telemetry for error reports</li>
+	<li>oh yeah - CHARTS!</li>
+	</ul>
+	<div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>What didn't make the cut</h1>
+    <ul>
+    <li>drilling</li>
+    <li>role-based security</li>
+    <li>tablet support</li>
+    <li>embedded mode</li>
+    </ul>
+    <p>These will hopefully make it into 2.3</p>    
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Backbone.js</h1>
+    <ul>
+    <li>drastically reduces barrier to entry for contributers</li>
+    <li>makes our lives easier</li>
+    <li>loads and runs even faster (like that were possible)</li>
+    <li>opens up the possibility for alternative backends (XML/A, ElasticSearch, etc)</li>
+    </ul>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Caching and performance</h1>
+    <ul>
+    <li>cubes are now loaded in localStorage, drastically reducing startup time for additional tabs</li>
+    <li>dimensions are prefetched, making new queries instantaneous</li>
+    <li>Backbone allows us to do background rendering of HTML</li>
+    <li>tabs are now stored more efficiently, reducing memory footprint</li>
+    </ul>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Translation</h1>
+    <ul>
+    <li>internationalization is done on the fly</li>
+    <li>users can click a button, see the current translations, and offer new ones</li>
+    <li>translations are sent to CouchDB, where we can pull the data in a format ready to insert into the code base</li>
+    </ul>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Telemetry</h1>
+    <ul>
+    <li>stream errors from every client anonymously</li>
+    <li>like firebug for every browser on the market</li>
+    <li>allows us to fix bugs and immediately relase the fixes</li>
+    <li>it may change the way we distribute Saiku</li>
+    </ul>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Charts</h1>
+    <ul>
+    <li>the most requested feature ever</li>
+    <li>simple charting allows you to pull meaning quickly from the data</li>
+    <li>you can stay in chart mode and continue to massage the data</li>
+    </ul>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Demo</h1>
+    <ul>
+    <li><a href="http://demo.analytical-labs.com/new-ui/">Hosted</a></li>
+    <li><a href="http://localhost:8080/">Local</a></li>
+    </ul>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Questions?</h1>
+    <div class="handout"></div>
+</div>
+
+</div>
+
+</body>
+</html>
