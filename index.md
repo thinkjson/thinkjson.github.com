@@ -1,8 +1,6 @@
 ---
 layout: default
 title: thinkjson.com
-redirects:
-- /test
 ---
 
 {% assign first_post = site.posts.first %}

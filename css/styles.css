@@ -13,6 +13,7 @@ h2, h2 a{font-size:22px;}
 h3, h3 a, #nav a{font-size:18px;}
 h4{font-weight:bold;}
 body{background:#570002;margin:20px 0;}
+#logo{margin-bottom:20px;}
 #logo a{background:url(/images/logo.png) 0% 0% no-repeat;padding-top:60px;padding-left:22px;}
 #logo h1{display:block;}
 #search {text-align:right;margin-right:30px;}
