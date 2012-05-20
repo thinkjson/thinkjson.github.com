@@ -44,7 +44,3 @@ var tiemonster = {
 };
 
 tiemonster.init();
-
-$(document).ready(function() {
-        document.getElementById("search").focus();
-});

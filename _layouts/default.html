@@ -5,12 +5,17 @@
 
 <head>
     <meta charset="utf-8">
-    <title>{{ page.title }} | Mark Cahill</title> 
+    <title>{{ page.title }} | Mark Cahill</title>
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
     <link href='/css/styles.css' rel='stylesheet' type='text/css' /> 
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.thinkjson.com/feed.rss" /> 
 </head> 
  
 <body> 
+
+<div id="logo">
+    <h1><a href="/">Mark Cahill on scaling, web services, and UX</a></h1>
+</div>
  
 <div id="container">
 
@@ -20,16 +25,6 @@
         <a href="/talks/">Talks</a>
         <a href="/downloads/Mark%20Cahill%20-%20resume.pdf">Résumé</a>
     </div>
- 
-    <div id="logo">
-        <h1><a href="/">Mark Cahill on scaling, web services, and UX</a></h1>
-    </div>
-    
-    <!-- <div id="search">
-        <form method="get" action="/search/"> 
-        Search <input type="text" name="search" value=""/> 
-        </form>
-    </div> -->
     
     <div id="content">
     {{ content }}
@@ -40,21 +35,19 @@
             <h3>About Mark Cahill</h3>
             
             <p><img src="/images/portrait.jpg" alt="Me" class="portrait" />
-                I am a web application developer working at a small private 
-                university, and finishing a second Bachelor's degree in computer science. 
-                I'm on the UI team for Saiku, an open source analysis tool, and an
-                active member of the open source community.</p>
+                I am the Data Analyst and Developer at YouVersion - the Bible App.
+                We are a top-100 mobile application with over 50 million users
+                and counting. My goal is to enable YouVersion to utilize their data 
+                to more effectively engage our users with the Bible.</p>
             
             <p>I am passionate about scalable web services and elegant user interfaces,
                 and feel that the web provides a unique opportunity to change the way 
                 we think about software and the way we interact with it.</p>
             
-            <p>The best place to find me is on freenode in ##saiku 
-                between 8am and 4:30pm EST M-F. You can also find me on
+            <p>The best place to find me is on 
                 <a href="http://twitter.com/thinkjson">Twitter</a>, 
-                <a href="https://github.com/inbox/new/thinkjson">shoot
-                me a message on Github</a>, or use my 
-                <a href="/contact">Contact form</a>.</p> 
+                but you can also shoot me a message at 
+                <a href="mailto:hello@thinkjson.com">hello@thinkjson.com</a>.</p> 
         </div>
             
     </div>  
@@ -73,7 +66,7 @@
 <!-- asynchronous analytics code by Mathias Bynens; change UA-XXXXX-X to your own code; http://mathiasbynens.be/notes/async-analytics-snippet -->
 <!-- this can also be placed in the <head> if you want page views to be tracked quicker -->
 <script>
-if (location.hostname == "www.thinkjson.com") {
+if (location.hostname.indexOf("thinkjson") !== -1) {
     var _gaq = [['_setAccount', 'UA-17520717-1'], ['_trackPageview']];
     (function(d, t) {
         var g = d.createElement(t),
