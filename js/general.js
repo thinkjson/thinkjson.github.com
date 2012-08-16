@@ -35,7 +35,7 @@ var thinkjson = {
             }
             var $header = $("<h3 />").prependTo($div);
             $("<a />").text(project.name)
-                .attr({ href: project.url })
+                .attr({ href: project.html_url })
                 .appendTo($header);
         });
     },

@@ -38,6 +38,8 @@ pre{background-color:#eee;padding:10px;}
   body{margin:0}
 }
 .dsq-options{display:none;}
-.fork{background:url(images/fork.png) top right no-repeat;}
-.project{margin-bottom:10px;}
-.active hr{background:url(images/active.png) top right no-repeat;}
+/* Images courtesy of http://icons8.com/ */
+.fork{background:url(images/fork.png) top left no-repeat;}
+.project{margin-bottom:10px;padding-left:40px;}
+.active{background:url(images/active.png) top left no-repeat;}
+.legend {float: right;height: 30px;line-height: 30px;margin-left: 30px;}
