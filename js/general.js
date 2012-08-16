@@ -13,21 +13,30 @@ var tiemonster = {
     fetch_github_projects: function () {
         $(document).ready(function () {
             $projects = $("#projects");
-            $projects.html("Initializing...");
-            $.getScript("/js/gh.js", function() {
-                $projects.html("Scanning github projects...");
-                gh.user("thinkjson").repos(function(data) {
-                    $projects.html("");
-                    $.each(data.repositories, function (project_iterator, project) {
-                        $("<a />").text(project.name)
-                            .attr({ href: project.url })
-                            .appendTo($projects);
-                        $("<span>").html(" " + project.description + "<br />").appendTo($projects);
-                    });
-                });
-            });
+            $projects.html("Loading projects...");
+            $.getScript("https://api.github.com/users/thinkjson/repos?callback=render_github_projects")
         });
     },
+
+    render_github_projects: function(data) {
+        $projects.html("");
+        $.each(data.repositories, function (project_iterator, project) {
+            var $div = $("<div />").text(project.description)
+                .appendTo($projects);
+            if (project.fork === true) {
+                $div.addClass('fork');
+            }
+            if ((new Date() - new Date(project.updated_at))/1000/60/60/24 > 90) {
+                $div.addClass('active');
+            } else {
+                $div.addClass('inactive');
+            }
+            var $header = $("<h2 />").prependTo($div);
+            $("<a />").text(project.description)
+                .attr({ href: project.url })
+                .appendTo($header);
+        });
+    }
     
     select_name: function() {
         $('input[name="name"]').focus();
