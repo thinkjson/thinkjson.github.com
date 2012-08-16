@@ -24,6 +24,7 @@ var thinkjson = {
             var $div = $("<div />").html("Language: " + project.language +
                 "<br />" + project.description)
                 .appendTo($projects);
+            $div.addClass('project');
             if (project.fork === true) {
                 $div.addClass('fork');
             }
