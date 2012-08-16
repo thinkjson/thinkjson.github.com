@@ -21,18 +21,19 @@ var thinkjson = {
     render_github_projects: function(data) {
         $projects.html("");
         $.each(data.data, function (project_iterator, project) {
-            var $div = $("<div />").text(project.description)
+            var $div = $("<div />").html("Language: " + project.language +
+                "<br />" + project.description)
                 .appendTo($projects);
             if (project.fork === true) {
                 $div.addClass('fork');
             }
             if ((new Date() - new Date(project.updated_at))/1000/60/60/24 > 90) {
-                $div.addClass('active');
-            } else {
                 $div.addClass('inactive');
+            } else {
+                $div.addClass('active');
             }
-            var $header = $("<h2 />").prependTo($div);
-            $("<a />").text(project.description)
+            var $header = $("<h3 />").prependTo($div);
+            $("<a />").text(project.name)
                 .attr({ href: project.url })
                 .appendTo($header);
         });

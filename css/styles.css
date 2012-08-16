@@ -38,3 +38,6 @@ pre{background-color:#eee;padding:10px;}
   body{margin:0}
 }
 .dsq-options{display:none;}
+.fork:before{content:"\f020"}
+.fork{margin-bottom:10px;}
+.inactive{opacity:0.8;}
