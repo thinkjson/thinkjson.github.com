@@ -1,5 +1,5 @@
 /*globals $ window document */
-var tiemonster = {
+var thinkjson = {
     // define your oft-used settings below
     settings: {
 
@@ -14,13 +14,13 @@ var tiemonster = {
         $(document).ready(function () {
             $projects = $("#projects");
             $projects.html("Loading projects...");
-            $.getScript("https://api.github.com/users/thinkjson/repos?callback=render_github_projects")
+            $.getScript("https://api.github.com/users/thinkjson/repos?callback=thinkjson.render_github_projects")
         });
     },
 
     render_github_projects: function(data) {
         $projects.html("");
-        $.each(data.repositories, function (project_iterator, project) {
+        $.each(data.data, function (project_iterator, project) {
             var $div = $("<div />").text(project.description)
                 .appendTo($projects);
             if (project.fork === true) {
@@ -43,13 +43,13 @@ var tiemonster = {
     },
     
     init: function() {
-        for (var i in tiemonster.path_specs) {
+        for (var i in thinkjson.path_specs) {
             if (window.location.pathname.toLowerCase()
-                    .indexOf(tiemonster.path_specs[i].path) !== -1) {
-                tiemonster[tiemonster.path_specs[i].init]();
+                    .indexOf(thinkjson.path_specs[i].path) !== -1) {
+                thinkjson[thinkjson.path_specs[i].init]();
             }
         }
     }
 };
 
-tiemonster.init();
+thinkjson.init();
