@@ -36,7 +36,7 @@ var tiemonster = {
                 .attr({ href: project.url })
                 .appendTo($header);
         });
-    }
+    },
     
     select_name: function() {
         $('input[name="name"]').focus();
