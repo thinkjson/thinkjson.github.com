@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Big Data</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20121006" />
+<meta name="author" content="Mark Cahill" />
+<meta name="company" content="YouVersion" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="../ui/thinkjson/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="../ui/thinkjson/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="../ui/thinkjson/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="../ui/thinkjson/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="../ui/thinkjson/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>September 19, 2011 in downtown DeLand</h1>
+<h2>Mark Cahill &lt;hello@thinkjson.com&gt;</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Big Data</h1>
+<h2>What is it? How do I know when I have it? What do I do once I know I do?</h2>
+<h3>Mark Cahill</h3>
+<h4>Data Analyst and Developer for YouVersion</h4>
+</div>
+
+<div class="slide">
+    <h1>What I do at YouVersion</h1>
+    <ul>
+        <li>Mobile telemetry and data collection</li>
+        <li>Data warehousing and database administration</li>
+        <li>Hadoop administration</li>
+        <li>Python and C/C++ development for the API team</li>
+        <li>Data analysis and predictive modeling</li>
+        <li>Anything else that falls under the umbrella of business intelligence</li>
+    </ul>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>What is data?</h1>
+    <p>As an internet user, you generate all sorts of data every day:</p>
+    <ul>
+        <li>your song collection or internet radio stations</li>
+        <li>social media engagement (posts on Facebook, tweets)</li>
+        <li>web browsing history</li>
+    </ul>
+    <p>As a business owner, your customers generate data:</p>
+    <ul>
+        <li>purchase history</li>
+        <li>customer interactions (phone, email, social media)</li>
+    </ul>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>What is Big Data?</h1>
+    <p>Big Data has one or more of the following characteristics:</p>
+    <ul>
+        <li>Velocity (faster than the write speed of a single disk)</li>
+        <li>Variety (not all the same type of data)</li>
+        <li>Volume (more than 500M records)</li>
+    </ul>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Let's make some data</h1><code><pre>
+    #!/usr/bin/python
+    import json, random
+
+    while True:
+        try:
+            print json.dumps({
+                "room": random.randint(100, 500),
+                "zipcode": "%05d" % random.randint(9999, 99999),
+                ...
+                "reward_program": random.randint(0, 10) < 3,
+                "has_pet": random.randint(0, 10) < 3,
+            })
+        except IOError:
+            break
+    </pre></code>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Let's make some data</h1>
+    <code><pre>
+    $ python sample_data.py | head -n 2000000 >sample_data.json
+    $ head -n 1 sample_data.json
+    {"num_guests": 5, "room": 456, "age": 35, "reward_program": false,
+    "zipcode": "78616", "length_of_stay": 9, "has_pet": false}
+    </pre></code>
+    <p>2 million records *isn't* Big Data, but it's more than Excel can handle. Let's pretend it's 2 billion.</p>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>So now that we have Big Data...</h1>
+    <h3 style="text-align:center">...now what?</h3>
+    <ul>
+        <li>traditional databases are too slow</li>
+        <li>sharding is hard</li>
+        <li>you're bound by the speed of a hard disk</li>
+    </ul>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Enter Hadoop</h1>
+    <ul>
+        <li>based on a paper by Google</li>
+        <li>distribute queries across an almost infinite number of machines</li>
+        <li>break queries down into distinct MapReduce tasks</li>
+        <li>write scalable analytics with just a little bit of code</li>
+        <li>Elastic MapReduce give you the power of Hadoop without having to run your own cluster</li>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Let's try some MapReduce</h1>
+    <code><pre>
+    #!/usr/bin/python
+    from mrjob.job import MRJob
+    from mrjob.protocol import JSONValueProtocol
+
+    class HotelMapReduce(MRJob):
+        INPUT_PROTOCOL = JSONValueProtocol
+        def mapper(self, _, line):
+            yield line.get('length_of_stay'), line.get('age')
+        def reducer(self, key, values):
+            total, count = 0.0, 0
+            for value in values:
+                total += value
+                count += 1
+            yield key, total/count
+    if __name__ == '__main__':
+        HotelMapReduce.run()
+    </pre></code>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Let's try some MapReduce</h1>
+    <code><pre>
+    $ python mapreduce.py <sample_data.json 2>/dev/null | sort -n
+    1   47.016558443827805
+    2   49.032684775830781
+    3   50.98658990479111
+    4   53.02250898262195
+    5   55.027978497487403
+    6   56.977804910567052
+    7   59.049851786291285
+    8   60.976499444456088
+    9   62.9587224205005
+    10  65.021031726538425
+    11  67.11941471630584
+    12  69.037106102562305
+    13  71.026948196940936
+    14  73.066182388220554
+    </pre></code>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Do I *have* to be a programmer?</h1>
+    <p>short answer? yes<p>
+    <p>longer answer? yes, absolutely</p>
+    <p>but...</p>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Along came BigQuery</h1>
+    <p>BigQuery allows you to treat your massive collection of data as a database. You can load your data in either CSV or JSON format, and query it with SQL. Queries on even billions of rows take only a few seconds.</p>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Using BigQuery</h1>
+    <p>Load the data:</p>
+    <code>
+    $ gsutil cp sample_data.json gs://bigquery-intake/
+    $ bq load samples.sampledata gs://bigquery-intake/sample_data.json room:integer,zipcode:string,length_of_stay:integer,\
+    num_guests:integer,reward_program:boolean,has_pet:boolean,age:integer
+    </code>
+
+    <p>Run the query:</p>
+    <code>
+    select length_of_stay, avg(age) from samples.sampledata group by length_of_stay
+    </code>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Using BigQuery</h1>
+    <p>BigQuery provides you some sample datasets to get a feel for the tool. For example:</p>
+    <code><pre>
+        SELECT comment='null' as no_comment, 
+        avg(num_characters) as avg_article_length 
+        from [publicdata:samples.wikipedia] group by no_comment
+    </pre></code>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>In conclusion</h1>
+    <p><b>Bad news:</b></p>
+    <p>Big Data is hard, and requires new solutions</p>
+    <p><b>Good news:</b></p>
+    <p>There are lots of really smart people working on those solutions</p>
+    <div class="handout"></div>
+</div>
+
+<div class="slide">
+    <h1>Questions?</h1>
+    <p>Also, feel free to contact me at hello@thinkjson.com, or on Twitter as @thinkjson</p>
+    <div class="handout"></div>
+</div>
+
+</div>
+
+<!-- asynchronous analytics code by Mathias Bynens; change UA-XXXXX-X to your own code; http://mathiasbynens.be/notes/async-analytics-snippet -->
+<!-- this can also be placed in the <head> if you want page views to be tracked quicker -->
+<script>
+    var _gaq = [['_setAccount', 'UA-17520717-1'], ['_trackPageview']];
+    (function(d, t) {
+        var g = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        g.async = true;
+        g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g, s);
+    })(document, 'script');
+</script>
+
+</body>
+</html>
