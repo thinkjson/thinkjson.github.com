@@ -84,7 +84,7 @@
         <li>Variety (not all the same type of data)</li>
         <li>Volume (more than 500M records)</li>
     </ul>
-    <div class="handout"></div>
+    <div class="handout">Here's one explanation of the 3 V's: <a href="http://cloudcomputing.sys-con.com/node/2194841">http://cloudcomputing.sys-con.com/node/2194841</a></div>
 </div>
 
 <div class="slide">
@@ -98,13 +98,13 @@
                 "room": random.randint(100, 500),
                 "zipcode": "%05d" % random.randint(9999, 99999),
                 ...
-                "reward_program": random.randint(0, 10) < 3,
-                "has_pet": random.randint(0, 10) < 3,
+                "reward_program": random.randint(0, 10) &lt; 3,
+                "has_pet": random.randint(0, 10) &lt; 3,
             })
         except IOError:
             break
     </pre></code>
-    <div class="handout"></div>
+    <div class="handout">If you are interested in learning Python, I highly recommend <a href="http://www.diveintopython.net/">Dive Into Python</a></div>
 </div>
 
 <div class="slide">
@@ -116,7 +116,7 @@
     "zipcode": "78616", "length_of_stay": 9, "has_pet": false}
     </pre></code>
     <p>2 million records *isn't* Big Data, but it's more than Excel can handle. Let's pretend it's 2 billion.</p>
-    <div class="handout"></div>
+    <div class="handout"><a href="http://office.microsoft.com/en-us/excel-help/excel-specifications-and-limits-HP010342495.aspx?CTT=5&amp;origin=HP005199291">Excel specifications and limits</a></div>
 </div>
 
 <div class="slide">
@@ -138,7 +138,7 @@
         <li>break queries down into distinct MapReduce tasks</li>
         <li>write scalable analytics with just a little bit of code</li>
         <li>Elastic MapReduce give you the power of Hadoop without having to run your own cluster</li>
-    <div class="handout"></div>
+    <div class="handout">For more information on Elastic MapReduce, visit http://aws.amazon.com/elasticmapreduce/</div>
 </div>
 
 <div class="slide">
@@ -161,7 +161,7 @@
     if __name__ == '__main__':
         HotelMapReduce.run()
     </pre></code>
-    <div class="handout"></div>
+    <div class="handout">This example uses Yelp's Python wrapper for EMR called MRjob. To install this helpful library, run `pip install mrjob`</div>
 </div>
 
 <div class="slide">
