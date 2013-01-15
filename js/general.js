@@ -22,7 +22,7 @@ var thinkjson = {
         $projects.html("");
         $.each(data.data, function (project_iterator, project) {
             var $div = $("<div />").html("Language: " + 
-                project.language ? project.language : "HTML5" +
+                (project.language ? project.language : "mixed") +
                 "<br />" + project.description)
                 .appendTo($projects);
             $div.addClass('project');
