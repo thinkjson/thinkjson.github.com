@@ -73,7 +73,8 @@ var stuff = [
     "data analysis",
     "Hadoop",
     "BigQuery",
-    "the future of the web"
+    "the future of the web",
+    "responsive design"
 ];
 var thisStuff = 0;
 setInterval(function() {
