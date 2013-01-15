@@ -28,7 +28,7 @@ var thinkjson = {
             if (project.fork === true) {
                 $div.addClass('fork');
             }
-            if ((new Date() - new Date(project.updated_at))/1000/60/60/24 > 90) {
+            if ((new Date() - new Date(project.pushed_at))/1000/60/60/24 > 90) {
                 $div.addClass('inactive');
             } else {
                 $div.addClass('active');
