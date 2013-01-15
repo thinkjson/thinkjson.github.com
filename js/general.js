@@ -21,7 +21,8 @@ var thinkjson = {
     render_github_projects: function(data) {
         $projects.html("");
         $.each(data.data, function (project_iterator, project) {
-            var $div = $("<div />").html("Language: " + project.language +
+            var $div = $("<div />").html("Language: " + 
+                project.language ? project.language : "HTML5" +
                 "<br />" + project.description)
                 .appendTo($projects);
             $div.addClass('project');
