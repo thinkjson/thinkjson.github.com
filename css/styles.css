@@ -4,23 +4,25 @@ h1, h1 a{font-size:28px;padding:0 1%;}
 h2, h2 a{font-size:22px;}
 h3, h3 a, #nav a{font-size:18px;}
 h4{font-weight:bold;}
-body{background: #333;margin:20px 0;}
+body{background: #222;margin:20px 0;}
+a{color:#9A0300;text-decoration:none;}
 #logo{max-width:960px;margin:0 auto;}
-#logo a{background:url(/images/logo_dark.png) 0 0 no-repeat;padding:60px 0 0 30px;color:#fff;}
+#logo a{background:url(/images/logo_dark.png) 0 0 no-repeat;padding:60px 300px 0 30px;}
 #logo h1{display:block;margin:80px 0 20px 0;padding:0;}
+#logo a,#logo a span{color:#fff;font-size: 28px;}
 #container{max-width:960px;margin:0 auto;background-color:#fff;box-shadow: 0 0 20px #000;}
-#content{padding:0 30px 10px 30px;}
-#sidebar{background-color:#ccc;padding:10px 30px;}
-#nav{text-align:right;padding:30px;}
-#nav a{margin-left:10px;}
+#content{padding:30px;}
+#sidebar{background-color:#ccc;padding:30px;}
+#nav{padding:10px 30px;background-color:#000;}
+#nav a{margin-right:20px;color:#fff;}
+#nav a:hover{color:#9A0300;}
 input, textarea{border:1px solid #ddd;}
 textarea{min-width:500px;height:200px;}
 .edit input, .edit textarea{width:80%;}
 .description, .description a{font-size:8pt;margin-bottom:15px;}
-a{color:#9A0300;text-decoration:none;}
 form th{text-align:left;}
 .required{display:none;}
-.portrait{border:1px solid #999;float:left;margin: 0 10px 10px 0;}
+.portrait{border:2px solid #999;float:right;margin: 40px 10px 10px 0;}
 .previous{clear:left;}
 .highlight .kd { font-weight: bold } /* Keyword.Declaration */
 .highlight .mi { color: #01595D } /* Literal.Number.Integer */

@@ -55,3 +55,31 @@ var thinkjson = {
 };
 
 thinkjson.init();
+
+var stuff = [
+    "scaling APIs",
+    "engaging the heart",
+    "Big Data",
+    "web engineering",
+    "mobile telemetry",
+    "open source",
+    "programming languages",
+    "redefining the web",
+    "stateless interfaces",
+    "HTML5",
+    "user interface design",
+    "user experience design",
+    "Node.js",
+    "data analysis",
+    "Hadoop",
+    "BigQuery",
+    "the future of the web"
+];
+var thisStuff = 0;
+setInterval(function() {
+    thisStuff = Math.floor(Math.random() * stuff.length);
+    $(".stuff").fadeOut('slow', function() {
+            $(this).text(stuff[thisStuff]);
+        })
+        .fadeIn('slow');
+}, 5000);
