@@ -1,5 +1,5 @@
-*{font-family:'Abel', sans-serif;font-size:15px;color:#222;}
-h1, h2, h3, h4, h1 a, h2 a, h3 a, h4 a, #nav a {color:#9A0300;margin:0;font-weight:normal;font-family:'Abel', sans-serif;}
+*{font-family: 'Helvetica Neue', Helvetica, sans-serif;font-size:15px;color:#222;font-weight:200;}
+h1, h2, h3, h4, h1 a, h2 a, h3 a, h4 a, #nav a, h1 span {color:#9A0300;margin:0;font-weight:normal;font-family:'Abel', sans-serif;}
 h1, h1 a{font-size:28px;padding:0 1%;}
 h2, h2 a{font-size:22px;}
 h3, h3 a, #nav a{font-size:18px;}

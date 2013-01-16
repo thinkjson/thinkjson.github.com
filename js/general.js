@@ -61,7 +61,6 @@ var stuff = [
     "scaling APIs",
     "engaging the heart",
     "Big Data",
-    "web engineering",
     "mobile telemetry",
     "open source",
     "programming languages",
@@ -77,9 +76,10 @@ var stuff = [
     "the future of the web",
     "responsive design"
 ];
+stuff.sort(function() {return 0.5 - Math.random()});
 var thisStuff = 0;
 setInterval(function() {
-    thisStuff = Math.floor(Math.random() * stuff.length);
+    thisStuff = (thisStuff + 1) % stuff.length;
     $(".stuff").fadeOut('slow', function() {
             $(this).text(stuff[thisStuff]);
         })
