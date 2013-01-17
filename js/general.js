@@ -65,7 +65,7 @@ var stuff = [
     "open source",
     "programming languages",
     "redefining the web",
-    "stateless interfaces",
+    "data science",
     "HTML5",
     "user interface design",
     "user experience design",
