@@ -22,7 +22,7 @@ textarea{min-width:500px;height:200px;}
 .description, .description a{font-size:8pt;margin-bottom:15px;}
 form th{text-align:left;}
 .required{display:none;}
-.portrait{border:2px solid #999;float:right;margin: 40px 0 10px 10px;}
+.portrait{border:2px solid #999;float:right;margin: 40px 0 10px 10px;box-shadow: 1px 1px 4px #000;}
 .previous{clear:left;}
 .highlight .kd { font-weight: bold } /* Keyword.Declaration */
 .highlight .mi { color: #01595D } /* Literal.Number.Integer */
