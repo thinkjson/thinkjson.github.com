@@ -59,22 +59,18 @@ thinkjson.init();
 
 var stuff = [
     "scaling APIs",
-    "engaging the heart",
     "Big Data",
     "mobile telemetry",
     "open source",
     "programming languages",
-    "redefining the web",
-    "data science",
+    "data analysis",
     "HTML5",
+    "Hadoop",
     "user interface design",
     "user experience design",
     "Node.js",
-    "data analysis",
-    "Hadoop",
     "BigQuery",
-    "the future of the web",
-    "responsive design"
+    "the future of the web"
 ];
 stuff.sort(function() {return 0.5 - Math.random()});
 var thisStuff = 0;
