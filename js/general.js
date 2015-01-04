@@ -6,7 +6,7 @@ var thinkjson = {
     },
     
     path_specs: [
-        { path: "open-source", init: "fetch_github_projects" },
+        { path: "projects", init: "fetch_github_projects" },
         { path: "contact", init: "select_name" }
     ],
 
@@ -56,28 +56,3 @@ var thinkjson = {
 };
 
 thinkjson.init();
-
-var stuff = [
-    "scaling APIs",
-    "Big Data",
-    "mobile telemetry",
-    "open source",
-    "programming languages",
-    "data analysis",
-    "HTML5",
-    "Hadoop",
-    "user interface design",
-    "user experience design",
-    "Node.js",
-    "BigQuery",
-    "the future of the web"
-];
-stuff.sort(function() {return 0.5 - Math.random()});
-var thisStuff = 0;
-setInterval(function() {
-    thisStuff = (thisStuff + 1) % stuff.length;
-    $(".stuff").fadeOut('slow', function() {
-            $(this).text(stuff[thisStuff]);
-        })
-        .fadeIn('slow');
-}, 5000);

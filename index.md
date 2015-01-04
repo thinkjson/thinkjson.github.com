@@ -9,17 +9,20 @@ title: thinkjson.com
     <div class="description"> 
         Posted {{ first_post.date | date:"%A, %B %d, %Y" }}
     </div>
-    {{ first_post.content|first }}
+    {{ first_post.excerpt }}
     <h3 style="text-align: right;">
         <a href="{{ first_post.url }}">Read the rest of the article</a>
     </h3> 
 </div>
 
-{% for post in site.posts %}
-{% if post != site.posts.first and post.layout == "post" %}
-<a href="{{ post.url }}">{{ post.title }}</a> 
-<div class="description"> 
-    Posted {{ post.date | date:"%A, %B %d, %Y" }}
+<hr />
+
+<div class="posts">
+	{% for post in site.posts %}
+	{% if post != site.posts.first and post.layout == "post" %}
+	<a href="{{ post.url }}">{{ post.title }}</a>
+
+	<div class="description">{{ post.date | date:"%A, %B %d, %Y" }}</div>
+	{% endif %}
+	{% endfor %}
 </div>
-{% endif %}
-{% endfor %}

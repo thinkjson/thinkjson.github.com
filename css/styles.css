@@ -1,15 +1,14 @@
 *{font-family: 'Helvetica Neue', Helvetica, sans-serif;font-size:15px;color:#222;font-weight:200;}
 h1, h2, h3, h4, h1 a, h2 a, h3 a, h4 a, #nav a, h1 span {color:#9A0300;margin:0;font-weight:normal;font-family:'Abel', sans-serif;}
-h1, h1 a{font-size:28px;padding:0 1%;}
-h2, h2 a{font-size:22px;}
+h1, h1 a{font-size:32px;padding:0 1%;}
+h2, h2 a{font-size:26px;}
 h3, h3 a, #nav a{font-size:18px;}
 h4{font-weight:bold;}
 body{background: #222;margin:20px 0;}
 a{color:#9A0300;text-decoration:none;}
-#logo{max-width:960px;margin:0 auto;}
-#logo a{background:url(/images/logo_dark.png) 0 0 no-repeat;padding:60px 300px 0 30px;}
-#logo h1{display:block;margin:80px 0 20px 0;padding:0;}
-#logo a,#logo a span{color:#fff;font-size: 28px;}
+#logo{max-width:960px;margin:20px auto;}
+#logo h1{float: right;margin-top:40px;}
+#logo a h1{color:#fff;font-size: 28px;}
 #container{max-width:960px;margin:0 auto;background-color:#fff;box-shadow: 0 0 20px #000;}
 #content{padding:30px;}
 #sidebar{background-color:#ccc;padding:30px;}
@@ -22,7 +21,7 @@ textarea{min-width:500px;height:200px;}
 .description, .description a{font-size:8pt;margin-bottom:15px;}
 form th{text-align:left;}
 .required{display:none;}
-.portrait{border:2px solid #999;float:right;margin: 40px 0 10px 10px;box-shadow: 1px 1px 4px #000;}
+.portrait{float:right;margin: 40px 0 10px 10px;box-shadow: 1px 1px 4px #000;}
 .previous{clear:left;}
 .highlight .kd { font-weight: bold } /* Keyword.Declaration */
 .highlight .mi { color: #01595D } /* Literal.Number.Integer */
@@ -45,3 +44,5 @@ pre{background-color:#eee;padding:10px;}
 .project{margin-bottom:10px;padding-left:40px;}
 .active{background:url(images/active.png) top left no-repeat;}
 .legend {float: right;height: 30px;line-height: 30px;margin-left: 30px;}
+.posts p{margin: 0;}
+hr {border:0;border-top:1px solid #ccc;}
