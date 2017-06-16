@@ -1,5 +1,0 @@
-permalink: /:title
-pygments: true
-auto: true
-safe: true
-include: .well-known
