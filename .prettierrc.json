@@ -1,0 +1,26 @@
+{
+    "arrowParens": "avoid",
+    "printWidth": 120,
+    "proseWrap": "preserve",
+    "semi": true,
+    "singleQuote": false,
+    "endOfLine": "auto",
+    "tabWidth": 4,
+    "trailingComma": "all",
+    "jsxBracketSameLine": false,
+    "overrides": [
+        {
+            "files": ["*.ts", "*.tsx"],
+            "options": {
+                "parser": "typescript"
+            }
+        },
+        {
+            "files": ["*.yml", "*.yaml"],
+            "options": {
+                "parser": "yaml",
+                "tabWidth": 2
+            }
+        }
+    ]
+}
