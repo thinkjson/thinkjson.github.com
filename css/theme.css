@@ -75,6 +75,10 @@ h2 {
     margin-top: 0;
 }
 
+#reading .recommended {
+    margin-bottom: 60px;
+}
+
 h1 {
     font-weight: 400;
 }
