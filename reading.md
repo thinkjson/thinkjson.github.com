@@ -11,7 +11,7 @@ title: Reading
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 current">
                 {% include currently-reading.html %}
             </div>
             <div class="col-md-8">

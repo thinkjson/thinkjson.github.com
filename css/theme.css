@@ -75,7 +75,8 @@ h2 {
     margin-top: 0;
 }
 
-#reading .recommended {
+#reading .recommended,
+#reading .current {
     margin-bottom: 60px;
 }
 
