@@ -109,7 +109,7 @@ layout: page
                 <p>
                     {% include currently-reading.html %}
                 </p>
-                <a href="/reading/">See more &raquo;</a>
+                <a href="/reading">See more &raquo;</a>
             </div>
         </div>
     </div>
