@@ -28,7 +28,7 @@ layout: page
                     have always enjoyed seeing ideas come to life in my programs. I
                     love to ship
                     <a
-                    href="https://www.forbes.com/sites/quora/2014/06/02/what-does-one-mean-by-elegant-code/#4151f15f2ca8"
+                    href="https://www.elegant-code.com/how-to-write-elegant-code/"
                     >elegant code</a
                     >
                     that solves
