@@ -10,14 +10,6 @@ title: Reading
                 {% include favorites.html %}
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4 current">
-                {% include currently-reading.html %}
-            </div>
-            <div class="col-md-8">
-                {% include read.html %}
-            </div>
-        </div>
     </div>
 
 </section>

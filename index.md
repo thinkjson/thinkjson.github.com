@@ -106,10 +106,7 @@ layout: page
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p>
-                    {% include currently-reading.html %}
-                </p>
-                <a href="/reading">See more &raquo;</a>
+                <a href="/reading">Reading &raquo;</a>
             </div>
         </div>
     </div>
